@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@400;500&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body
+{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.cont
+{
+    display: flex;
+}
+.cont .static
+{
+  
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    font-size: 60px; 
+}
+.cont .dynamic
+{
+    margin-left: 15px;
+}
+
+.dynamic 
+{
+    list-style: none;
+   color: red;
+   font-size: 60px;
+   position: relative;
+   font-weight: 500;
+}
+.dynamic::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-left: 3px solid red;
+    animation: typing 3s alternate infinite,
+            line 3s infinite;
+}
+@keyframes typing
+{
+    40%,
+    60%
+    {
+        left: calc(100% + 30px);
+    }
+    100%
+    {
+        left:0;
+    }
+   
+}
+@keyframes line
+{
+    50%
+    {
+        color: transparent;
+    }
+}
+@media only screen and (max-width: 800px)
+{
+.dynamic
+{
+    font-size: 20px;
+}
+.cont .static
+{
+    font-size: 20px;
+}
+}
